@@ -29,7 +29,6 @@ const questions = [
 var currentQuestionIndex = 0;
 var score = 0;
 
-// Selecting Elements
 var questionElement = document.getElementById("question");
 var answersContainer = document.getElementById("answers");
 var nextButton = document.getElementById("next-btn");
@@ -46,14 +45,14 @@ function showQuestion() {
         var button = document.createElement("button");
         button.textContent = answer;
         button.classList.add("answer");
-        button.addEventListener("click", () => selectAnswer(index)); // Fixed function name
+        button.addEventListener("click", () => selectAnswer(index));
         answersContainer.appendChild(button);
     });
 }
 
 function selectAnswer(index) {
     var correctAnswer = questions[currentQuestionIndex].correct;
-    if (index === correctAnswer) { // Fixed case sensitivity from 'Index' to 'index'
+    if (index === correctAnswer) {
         score++;
     }
     currentQuestionIndex++;
